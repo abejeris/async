@@ -40,9 +40,25 @@
 // 	console.log(res.data);
 // });
 
+// async function getPlanets() {
+// 	const res = await axios.get('https://swapi.dev/api/planets/');
+// 	console.log(res.data);
+// }
+
+// // ---with added catch error------------------------------
+// getPlanets().catch((err) => {
+// 	console.log(err, 'this is the error');
+// });
+
+// //with try catch block--------------------------------
+
 async function getPlanets() {
-	const res = await axios.get('https://swapi.dev/api/planets/');
-	console.log(res.data);
+	try {
+		const res = await axios.get('https://swapi.dev/api/planets');
+		console.log(res.data);
+	} catch (e) {
+		console.log('error is: ', e);
+	}
 }
 
 getPlanets();
