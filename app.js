@@ -7,24 +7,42 @@
 // --------------------------------------------------------------------------------
 // async functions
 
-async function greet() {
-	return 'HELLO nu!!!';
+// async function greet() {
+// 	return 'HELLO nu!!!';
+// }
+
+// greet().then((val) => {
+// 	console.log(val);
+// });
+
+// async function add(a, b) {
+// 	if (typeof a !== 'number' || typeof b !== 'number') {
+// 		throw 'a and b needs to be a number';
+// 	}
+// 	return a + b;
+// }
+// add('e', 'r')
+// 	.then((val) => {
+// 		console.log(val);
+// 	})
+// 	.catch((err) => {
+// 		console.log(err);
+// 	});
+
+// --------------------------------------------------------------------------------
+// await keyword
+
+// function getPlanets() {
+// 	return axios.get('https://swapi.dev/api/planets/');
+// }
+
+// getPlanets().then((res) => {
+// 	console.log(res.data);
+// });
+
+async function getPlanets() {
+	const res = await axios.get('https://swapi.dev/api/planets/');
+	console.log(res.data);
 }
 
-greet().then((val) => {
-	console.log(val);
-});
-
-async function add(a, b) {
-	if (typeof a !== 'number' || typeof b !== 'number') {
-		throw 'a and b needs to be a number';
-	}
-	return a + b;
-}
-add('e', 'r')
-	.then((val) => {
-		console.log(val);
-	})
-	.catch((err) => {
-		console.log(err);
-	});
+getPlanets();
